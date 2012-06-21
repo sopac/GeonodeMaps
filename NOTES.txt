@@ -1,0 +1,173 @@
+
+List Maps: (JSON)
+http://paris.sopac.org/maps/search/api
+
+Parse Page: (Extract Layers)
+http://paris.sopac.org/maps/12/view
+
+Embed:
+<iframe style="border: none;" height="400" width="600" src="http://paris.sopac.org/maps/12/embed"></iframe>
+
+Legend:
+http://paris.sopac.org/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&LAYER=FJ_Province
+
+
+Valid JSON:
+
+{
+    "defaultSourceType": "gxp_wmscsource",
+    "about": {
+        "abstract": "Map Shows Villages in Different Province in Fiji Islands",
+        "title": "Fiji Villages "
+    },
+    "map": {
+        "layers": [
+            {
+                "opacity": 1,
+                "args": [
+                    "OpenStreetMap"
+                ],
+                "group": "background",
+                "name": "OpenStreetMap",
+                "selected": false,
+                "visibility": true,
+                "source": "0",
+                "fixed": true,
+                "type": "OpenLayers.Layer.OSM"
+            },
+            {
+                "opacity": 1,
+                "args": [
+                    "No background",
+                    {
+                        "wrapDateLine": true
+                    }
+                ],
+                "group": "background",
+                "name": "No background",
+                "selected": false,
+                "visibility": false,
+                "source": "0",
+                "fixed": true,
+                "type": "OpenLayers.Layer"
+            },
+            {
+                "opacity": 1,
+                "group": "background",
+                "name": "SATELLITE",
+                "selected": false,
+                "visibility": false,
+                "source": "1",
+                "fixed": true
+            },
+            {
+                "opacity": 1,
+                "args": [
+                    "bluemarble",
+                    "http://maps.opengeo.org/geowebcache/service/wms",
+                    {
+                        "layers": [
+                            "bluemarble"
+                        ],
+                        "tiled": true,
+                        "tilesOrigin": [
+                            -20037508.34,
+                            -20037508.34
+                        ],
+                        "format": "image/png"
+                    },
+                    {
+                        "buffer": 0,
+                        "wrapDateLine": true
+                    }
+                ],
+                "group": "background",
+                "name": "bluemarble",
+                "selected": false,
+                "visibility": false,
+                "source": "0",
+                "fixed": true,
+                "type": "OpenLayers.Layer.WMS"
+            },
+            {
+                "opacity": 1,
+                "styles": "FJ_Province",
+                "name": "geonode:FJ_Province",
+                "format": "image/png",
+                "cached": true,
+                "selected": true,
+                "visibility": true,
+                "source": "2",
+                "fixed": false,
+                "transparent": true
+            },
+            {
+                "opacity": 1,
+                "styles": "FJ_Village",
+                "name": "geonode:FJ_Village",
+                "format": "image/png",
+                "cached": true,
+                "selected": true,
+                "visibility": true,
+                "source": "3",
+                "fixed": false,
+                "transparent": true
+            }
+        ],
+        "center": [
+            19989303.75277,
+            -1995813.6119439
+        ],
+        "units": "m",
+        "maxResolution": 156543.03390625,
+        "maxExtent": [
+            -20037508.34,
+            -20037508.34,
+            20037508.34,
+            20037508.34
+        ],
+        "zoom": 8,
+        "projection": "EPSG:900913"
+    },
+    "id": 12,
+    "sources": {
+        "0": {
+            "ptype": "gx_olsource",
+            "id": "0"
+        },
+        "1": {
+            "apiKey": "",
+            "ptype": "gxp_googlesource",
+            "id": "1"
+        },
+        "2": {
+            "url": "/geoserver/wms",
+            "restUrl": "/gs/rest",
+            "baseParams": {
+                "VERSION": "1.1.1",
+                "REQUEST": "GetCapabilities",
+                "TILED": true,
+                "SERVICE": "WMS"
+            },
+            "ptype": "gxp_wmscsource",
+            "id": "2"
+        },
+        "3": {
+            "url": "http://paris.sopac.org/geoserver/wms",
+            "restUrl": "/gs/rest",
+            "baseParams": {
+                "VERSION": "1.1.1",
+                "REQUEST": "GetCapabilities",
+                "TILED": true,
+                "SERVICE": "WMS"
+            },
+            "ptype": "gxp_wmscsource",
+            "id": "3"
+        },
+        "local": {
+            "url": "/geoserver/wms",
+            "restUrl": "/gs/rest",
+            "ptype": "gxp_wmscsource"
+        }
+    }
+}

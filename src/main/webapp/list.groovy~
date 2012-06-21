@@ -1,0 +1,19 @@
+
+GeonodeMaps m = new GeonodeMaps()
+
+println """
+
+<h3>Listing Maps</h3>
+<a href="${m.getGeonodeURL()}">${m.getGeonodeURL()}</a>
+<br/>
+<br/>
+
+"""
+int counter  = 0
+for (String[] maps : m.listMaps()){
+  counter++ 
+  println "<b>${counter}. <a href='show.groovy?id=" + maps[0] + "'>" +  maps[1] + "</a></b>"
+  println "<br/>"
+  println maps[2] + "<br/><br/>"
+}
+

@@ -1,0 +1,10 @@
+GeonodeMaps is a standalone web application built on Geonode and GeoServer REST API to display maps built using the Map Composer, primarily for printing.
+
+Test:
+mvn tomcat run
+
+Deploy:
+mvn package
+
+Applied GeoScience and Technology Division, SPC, 2012
+
